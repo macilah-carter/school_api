@@ -2,18 +2,6 @@
 
 This API is designed to manage students, units, and administrators for a school system. It includes authentication, CRUD operations for students and units, and features role-based access control for admins and students.
 
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Admin Routes](#admin-routes)
-  - [Student Routes](#student-routes)
-- [Middleware](#middleware)
-- [Models](#models)
-- [Environment Variables](#environment-variables)
-- [License](#license)
-
 ## Features
 
 - Admin and Student authentication using JWT tokens.
@@ -22,26 +10,28 @@ This API is designed to manage students, units, and administrators for a school 
 - Unit assignment and removal for students.
 - Role-based access control for Admins and Students.
 
-## Installation
+  ## Installation
 
-1. Clone the repository:
+  1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-repo/school-api.git
+     ```bash
+     git clone https://github.com/your-repo/school-api.git
+     ```
 
-   ```
+  ```
 
-2. Navigate to the project directory:
-   cd school-api
+  2. Navigate to the project directory:
+  cd school-api
 
-3. Install the dependencies:
-   npm install
+  3. Install the dependencies:
+  npm install
 
-4. Set up envirinment variables
-   eg. for the port or the secret_key
+  4. Set up envirinment variables
+  eg. for the port or the secret_key
 
-5. Start server:
-   npm start
+  5. Start server:
+  npm start
+  ```
 
 Usage
 Admin Routes 1. Create Admin
