@@ -45,24 +45,24 @@ This API is designed to manage students, units, and administrators for a school 
 
 Usage
 Admin Routes 1. Create Admin
-POST `/admin`
-Request Body:
+. POST `/admin`
+. Request Body:
 {
 "username": "admin123",
 "email": "admin@example.com",
 "password": "password123"
 }
 2.Admin Login
-POST /login
-Request Body:
+. POST /login
+. Request Body:
 {
 "email": "admin@example.com",
 "password": "password123"
 } 3. Get Students (Paginated)
-GET `/students` 4. Get Units
-GET `/units` 5. Add Unit
-POST `/units`
-Request Body:
+. GET `/students` 4. Get Units
+. GET `/units` 5. Add Unit
+. POST `/units`
+. Request Body:
 {
 "name": "Mathematics",
 "code": "MATH101"
