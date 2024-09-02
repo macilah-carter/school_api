@@ -17,9 +17,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+//loggin and signup
 app.use('/student', require('./routes/student/auth'));
 app.use('/admin', require('./routes/admin/authAdmin'));
 
+//crud
 app.use('/',verify, require('./routes/student/student'));
 app.use('/',verifyAdmin, require('./routes/admin/admin'));
 

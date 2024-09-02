@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken')
 const router = express.Router();
 
 const jwt_secret = 'my secret';
-
+// 
 
 //create a Admin
 router.post('/admin', async (req, res) => {
