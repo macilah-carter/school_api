@@ -1,155 +1,36 @@
-# School API
+<h1 align="center">Welcome to school_api 👋</h1>
+<p>
+  <a href="https://www.npmjs.com/package/school_api" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/school_api.svg">
+  </a>
+  <a href="#" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
+  </a>
+</p>
 
-This API provides a robust and secure platform for managing students, units (courses), and administrators within a school system. It offers seamless authentication, CRUD (Create, Read, Update, Delete) operations for students and units, pagination for efficient student management, unit assignments/removals for students, and role-based access control (RBAC) to ensure data security.
+> school api for school management
 
-Features
-Authentication:
-Secure JWT token-based authentication for both admins and students.
-Separate login endpoints for each role.
-Student Management (CRUD):
-Create, read (paginated), update, and delete student records.
-Retrieving specific student information by ID.
-Option to update specific student fields through PATCH requests.
-Unit Management (CRUD):
-Create, read, update, and delete units.
-Add or remove units from student profiles.
-Pagination:
-Efficiently retrieve large lists of students in paginated responses, minimizing server load and improving performance.
-Role-Based Access Control (RBAC):
-Ensures appropriate access levels for admins and students.
-Prevents unauthorized access to sensitive data.
-Installation
-Clone the Repository:
+## Install
 
-Bash
-git clone https://github.com/your-repo/school-api.git
-Use code with caution.
-
-Navigate to Project Directory:
-
-Bash
-cd school-api
-Use code with caution.
-
-Install Dependencies:
-
-Bash
+```sh
 npm install
-Use code with caution.
+```
 
-Set Up Environment Variables:
+## Run tests
 
-Create a .env file in the project root directory (ignore this file with Git) to store sensitive information like port numbers and secret keys. Here's an example:
+```sh
+npm run test
+```
 
-PORT=3000
-SECRET_KEY=your_secret_key_here
+## Author
 
-# Add other environment variables as needed
+👤 **musee carter**
 
-Important Note: Never commit your .env file to a public repository.
+* Github: [@macilah-carter](https://github.com/macilah-carter)
 
-Start the Server:
+## Show your support
 
-Bash
-npm start
-Use code with caution.
+Give a ⭐️ if this project helped you!
 
-Usage
-This section outlines API endpoints, request body examples (where applicable), and response structures.
-
-Admin Routes:
-
-Create Admin
-
-Method: POST
-
-Endpoint: /admin
-
-Request Body:
-
-JSON
-{
-"username": "admin123",
-"email": "admin@example.com",
-"password": "password123"
-}
-Use code with caution.
-
-Admin Login
-
-Method: POST
-
-Endpoint: /login
-
-Request Body:
-
-JSON
-{
-"email": "admin@example.com",
-"password": "password123"
-}
-Use code with caution.
-
-Response: Upon successful login, the response will contain a JWT token for further authenticated requests.
-
-Get Students (Paginated)
-
-Method: GET
-Endpoint: /students (supports pagination parameters like page and limit)
-Response: A paginated list of student objects containing essential information (e.g., ID, username, email, enrolled units).
-Get Units
-
-Method: GET
-Endpoint: /units
-Response: A list of unit objects containing details like ID, name, and code.
-Add Unit
-
-Method: POST
-
-Endpoint: /units
-
-Request Body:
-
-JSON
-{
-"name": "Mathematics",
-"code": "MATH101"
-}
-Use code with caution.
-
-Response: The newly created unit object with its generated ID.
-
-Student Routes:
-
-Create Student
-
-Method: POST
-
-Endpoint: /student
-
-Request Body:
-
-JSON
-{
-"username": "student123",
-"email": "student@example.com",
-"password": "password123"
-}
-Use code with caution.
-
-Student Login
-
-Method: POST
-
-Endpoint: /login
-
-Request Body:
-
-JSON
-{
-"email": "student@example.com",
-"password": "password123"
-}
-Use code with caution.
-
-Response: Upon successful
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
