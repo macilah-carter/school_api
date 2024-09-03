@@ -1,36 +1,79 @@
-<h1 align="center">Welcome to school_api 👋</h1>
-<p>
-  <a href="https://www.npmjs.com/package/school_api" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/school_api.svg">
-  </a>
-  <a href="#" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
-  </a>
-</p>
+# School API
 
-> school api for school management
+This API is designed to manage students, units, and administrators for a school system. It includes authentication, CRUD operations for students and units, and features role-based access control for admins and students.
 
-## Install
+## Table of Contents
 
-```sh
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Admin Routes](#admin-routes)
+  - [Student Routes](#student-routes)
+- [Middleware](#middleware)
+- [Models](#models)
+- [Environment Variables](#environment-variables)
+- [License](#license)
+
+## Features
+
+- Admin and Student authentication using JWT tokens.
+- CRUD operations for managing students and units.
+- Pagination for student listing.
+- Unit assignment and removal for students.
+- Role-based access control for Admins and Students.
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-repo/school-api.git
+
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd school_api
+   ```
+
+3. Install the dependencies:
+
+```bash
 npm install
 ```
 
-## Run tests
+4. Set up your environment variables(for this project you do need to set since its for demonstation them but if you are going live you will need to set):
 
-```sh
-npm run test
-```
+   ```bash
+    JWT_SECRET=mysecret
+   ```
 
-## Author
+5. Start the server:
+   ```bash
+    npm start
+   ```
 
-👤 **musee carter**
+## USAGE
 
-* Github: [@macilah-carter](https://github.com/macilah-carter)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+1. Usage:
+   Admin Routes:
+   Create Admin:
+   . POST `/admin`
+   . Request Body:
+   ```bash
+    {
+      "username": "admin123",
+      "email": "admin@example.com",
+      "password": "password123"
+    }
+   ```
+2. Admin Login:
+   . POST `/login`
+   . Request Body:
+   ```bash
+    {
+      "email": "admin@example.com",
+      "password": "password123"
+    }
+   ```
