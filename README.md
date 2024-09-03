@@ -56,24 +56,23 @@ npm install
 
 ## USAGE
 
-1. Usage:
-   Admin Routes:
-   Create Admin:
-   . POST `/admin`
-   . Request Body:
-   ```bash
-    {
-      "username": "admin123",
-      "email": "admin@example.com",
-      "password": "password123"
-    }
+1. Admin Routes:
+   - Create Admin:
+   - . POST `/admin`
+   - . Request Body:
+   ```json
+   {
+     "username": "admin123",
+     "email": "admin@example.com",
+     "password": "password123"
+   }
    ```
 2. Admin Login:
-   . POST `/login`
-   . Request Body:
-   ```bash
-    {
-      "email": "admin@example.com",
-      "password": "password123"
-    }
+   - . POST `/login`
+   - . Request Body:
+   ```json
+   {
+     "email": "admin@example.com",
+     "password": "password123"
+   }
    ```
