@@ -1,103 +1,155 @@
 # School API
 
-This API is designed to manage students, units, and administrators for a school system. It includes authentication, CRUD operations for students and units, and features role-based access control for admins and students.
+This API provides a robust and secure platform for managing students, units (courses), and administrators within a school system. It offers seamless authentication, CRUD (Create, Read, Update, Delete) operations for students and units, pagination for efficient student management, unit assignments/removals for students, and role-based access control (RBAC) to ensure data security.
 
-## Features
+Features
+Authentication:
+Secure JWT token-based authentication for both admins and students.
+Separate login endpoints for each role.
+Student Management (CRUD):
+Create, read (paginated), update, and delete student records.
+Retrieving specific student information by ID.
+Option to update specific student fields through PATCH requests.
+Unit Management (CRUD):
+Create, read, update, and delete units.
+Add or remove units from student profiles.
+Pagination:
+Efficiently retrieve large lists of students in paginated responses, minimizing server load and improving performance.
+Role-Based Access Control (RBAC):
+Ensures appropriate access levels for admins and students.
+Prevents unauthorized access to sensitive data.
+Installation
+Clone the Repository:
 
-- Admin and Student authentication using JWT tokens.
-- CRUD operations for managing students and units.
-- Pagination for student listing.
-- Unit assignment and removal for students.
-- Role-based access control for Admins and Students.
+Bash
+git clone https://github.com/your-repo/school-api.git
+Use code with caution.
 
-  ## Installation
+Navigate to Project Directory:
 
-  1. Clone the repository:
+Bash
+cd school-api
+Use code with caution.
 
-     ```bash
-     git clone https://github.com/your-repo/school-api.git
-     ```
+Install Dependencies:
 
-  ```
+Bash
+npm install
+Use code with caution.
 
-  2. Navigate to the project directory:
-  cd school-api
+Set Up Environment Variables:
 
-  3. Install the dependencies:
-  npm install
+Create a .env file in the project root directory (ignore this file with Git) to store sensitive information like port numbers and secret keys. Here's an example:
 
-  4. Set up envirinment variables
-  eg. for the port or the secret_key
+PORT=3000
+SECRET_KEY=your_secret_key_here
 
-  5. Start server:
-  npm start
-  ```
+# Add other environment variables as needed
+
+Important Note: Never commit your .env file to a public repository.
+
+Start the Server:
+
+Bash
+npm start
+Use code with caution.
 
 Usage
-Admin Routes 1. Create Admin
-. POST `/admin`
-. Request Body:
+This section outlines API endpoints, request body examples (where applicable), and response structures.
+
+Admin Routes:
+
+Create Admin
+
+Method: POST
+
+Endpoint: /admin
+
+Request Body:
+
+JSON
 {
 "username": "admin123",
 "email": "admin@example.com",
 "password": "password123"
 }
-2.Admin Login
-. POST /login
-. Request Body:
+Use code with caution.
+
+Admin Login
+
+Method: POST
+
+Endpoint: /login
+
+Request Body:
+
+JSON
 {
 "email": "admin@example.com",
 "password": "password123"
-} 3. Get Students (Paginated)
-. GET `/students` 4. Get Units
-. GET `/units` 5. Add Unit
-. POST `/units`
-. Request Body:
+}
+Use code with caution.
+
+Response: Upon successful login, the response will contain a JWT token for further authenticated requests.
+
+Get Students (Paginated)
+
+Method: GET
+Endpoint: /students (supports pagination parameters like page and limit)
+Response: A paginated list of student objects containing essential information (e.g., ID, username, email, enrolled units).
+Get Units
+
+Method: GET
+Endpoint: /units
+Response: A list of unit objects containing details like ID, name, and code.
+Add Unit
+
+Method: POST
+
+Endpoint: /units
+
+Request Body:
+
+JSON
 {
 "name": "Mathematics",
 "code": "MATH101"
 }
+Use code with caution.
 
-Student Routes 1. Create Student
-. POST `/student`
-. Request Body:
+Response: The newly created unit object with its generated ID.
+
+Student Routes:
+
+Create Student
+
+Method: POST
+
+Endpoint: /student
+
+Request Body:
+
+JSON
 {
 "username": "student123",
 "email": "student@example.com",
 "password": "password123"
 }
+Use code with caution.
 
-    2. Student Login
-        . POST `/login`
-        Request Body:
-            {
-                "email": "student@example.com",
-                "password": "password123"
-            }
+Student Login
 
-    3. Get Student by ID
-        . GET `/student/:id`
-    4. Update Student
-        . PATCH `/student/:id`
-        . Request Body: JSON object with the fields to update.
-    5. Delete Student
-        . DELETE `/student/:id`
-    6. Add Unit to Student
-        . POST /student/:id/units
-        . Request Body:
-            {
-                "name": "Mathematics",
-                "code": "MATH101"
-            }
+Method: POST
 
-    7. Remove Unit from Student
-        . DELETE `/student/:id/units/:uid`
+Endpoint: /login
 
-Middleware
-. Pagination: Used for paginating the student list.
-. JWT Authentication: Verifies JWT tokens for both students and admins.
+Request Body:
 
-Models
-. Admin: Handles admin users.
-. Student: Manages student records.
-. Units: Stores unit information.
+JSON
+{
+"email": "student@example.com",
+"password": "password123"
+}
+Use code with caution.
+
+Response: Upon successful
