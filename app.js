@@ -25,7 +25,9 @@ app.use('/admin', require('./routes/admin/authAdmin'));
 app.use('/',verify, require('./routes/student/student'));
 app.use('/',verifyAdmin, require('./routes/admin/admin'));
 
-
+app.get('/',(req,res)=>{
+    res.send("Hello, This is the home page")
+})
 app.listen(port, () => {
     console.log(`app running on ${port}`);
 });
