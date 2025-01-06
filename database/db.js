@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-
+const dburl = process.env.DBUR
 const dbconnection = async () => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/school');
+        await mongoose.connect(dburl);
         console.log('connected');
     } catch (error) {
         console.log(error);
